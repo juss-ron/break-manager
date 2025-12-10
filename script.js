@@ -1,5 +1,5 @@
 // Configuration
-const API_URL = '/api';
+const API_URL = 'https://break-manager-api.onrender.com';
 
 // State
 let currentUser = null;
