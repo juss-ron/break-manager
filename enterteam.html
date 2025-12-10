@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Break Manager - Join Team</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Team Selection View -->
+        <section id="team-selection-view" class="view active">
+            <div class="auth-card">
+                <h1>Welcome, <span id="user-name-display">User</span></h1>
+                <p class="subtitle">Join or create a team to get started</p>
+
+                <div class="team-actions">
+                    <button id="show-create-team-modal-btn" class="btn-primary">Create New Team</button>
+                    <div class="divider">OR</div>
+                    <button id="show-join-team-modal-btn" class="btn-secondary">Join Existing Team</button>
+                </div>
+                <button id="logout-btn" class="btn-text">Logout</button>
+            </div>
+        </section>
+
+        <!-- Create Team Modal -->
+        <div id="create-team-modal" class="modal-overlay">
+            <div class="modal-content auth-card">
+                <h3>Create New Team</h3>
+                <div class="input-group">
+                    <label for="new-team-name">Team Name</label>
+                    <input type="text" id="new-team-name" placeholder="Enter Team Name">
+                </div>
+                <div class="modal-actions">
+                    <button id="cancel-create-team-btn" class="btn-secondary">Cancel</button>
+                    <button id="confirm-create-team-btn" class="btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Join Team Modal -->
+        <div id="join-team-modal" class="modal-overlay">
+            <div class="modal-content auth-card">
+                <h3>Join Team</h3>
+                <div class="input-group">
+                    <label for="join-team-code">Team Code</label>
+                    <input type="text" id="join-team-code" placeholder="Enter Team Code">
+                </div>
+                <div class="modal-actions">
+                    <button id="cancel-join-team-btn" class="btn-secondary">Cancel</button>
+                    <button id="confirm-join-team-btn" class="btn-primary">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Break Manager - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Dashboard View -->
+        <section id="dashboard-view" class="view active">
+            <header class="dashboard-header">
+                <div class="team-info">
+                    <h2 id="team-name-display">Team Name</h2>
+                    <span class="team-code" id="team-code-display">Code: XYZ</span>
+                </div>
+                <button id="dashboard-logout-btn" class="btn-small">Logout</button>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="timer-column">
+                    <div class="timer-card">
+                        <h3 id="timer-title">Personal Rest Timer</h3>
+                        <div class="timer-display" id="timer">04:00:00</div>
+                        <div class="timer-status" id="timer-status">Ready to Break</div>
+
+                        <!-- Personal Controls -->
+                        <div class="controls" id="personal-controls">
+                            <button id="start-break-btn" class="btn-large btn-break">Start Break</button>
+                            <button id="end-break-btn" class="btn-large btn-work" disabled>End Break</button>
+                        </div>
+
+                        <!-- Hackathon Controls (Hidden by default) -->
+                        <div class="controls hidden" id="hackathon-controls">
+                            <!-- Start/Pause/End for Hackathon -->
+                            <button id="start-hackathon-btn" class="btn-large btn-break">Start</button>
+                            <button id="pause-hackathon-btn" class="btn-large btn-warning" disabled>Pause</button>
+                            <button id="delete-team-btn" class="btn-large btn-danger" disabled>Delete Team</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-column">
+                    <div class="team-header">
+                        <h3>Team Status</h3>
+                    </div>
+
+                    <div class="team-list" id="team-list">
+                        <!-- Team members populated by JS -->
+                    </div>
+
+                    <div class="status-footer">
+                        <button id="toggle-hackathon-timer-btn" class="btn-small">View Timer</button>
+                        <button id="set-hackathon-btn" class="btn-small btn-setup">Set Time</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Set Time Modal -->
+        <div id="set-time-modal" class="modal-overlay">
+            <div class="modal-content auth-card">
+                <h3>Set Timer Duration</h3>
+                <div class="input-group">
+                    <label for="hours-input">Hours</label>
+                    <input type="number" id="hours-input" min="0" placeholder="0">
+                </div>
+                <div class="input-group">
+                    <label for="minutes-input">Minutes</label>
+                    <input type="number" id="minutes-input" min="0" max="59" placeholder="0">
+                </div>
+                <div class="modal-actions">
+                    <button id="cancel-time-btn" class="btn-secondary">Cancel</button>
+                    <button id="save-time-btn" class="btn-primary">Set Time</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
